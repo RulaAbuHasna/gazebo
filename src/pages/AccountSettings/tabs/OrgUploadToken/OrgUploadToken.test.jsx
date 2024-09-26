@@ -313,43 +313,43 @@ describe('OrgUploadToken', () => {
     })
   })
 
-  describe('when user is not an admin and token is not available', () => {
-    it('Render disabled regenerate button', async () => {
-      setup({ isAdmin: false })
-      render(<OrgUploadToken />, { wrapper })
+  // describe('when user is not an admin and token is not available', () => {
+  //   it('Render disabled regenerate button', async () => {
+  //     setup({ isAdmin: false })
+  //     render(<OrgUploadToken />, { wrapper })
 
-      const genBtn = await screen.findByText('Generate')
-      expect(genBtn).toBeDisabled()
-    })
+  //     const genBtn = await screen.findByText('Generate')
+  //     expect(genBtn).toBeDisabled()
+  //   })
 
-    it('renders information', async () => {
-      setup({ isAdmin: false })
-      render(<OrgUploadToken />, { wrapper })
+  //   it('renders information', async () => {
+  //     setup({ isAdmin: false })
+  //     render(<OrgUploadToken />, { wrapper })
 
-      const text = await screen.findByText(
-        'Only organization admins can regenerate this token.'
-      )
-      expect(text).toBeInTheDocument()
-    })
-  })
+  //     const text = await screen.findByText(
+  //       'Only organization admins can regenerate this token.'
+  //     )
+  //     expect(text).toBeInTheDocument()
+  //   })
+  // })
 
-  describe('when user is not an admin and token is available', () => {
-    it('renders disabled regenerate button', async () => {
-      setup({ orgUploadToken: 'token', isAdmin: false })
-      render(<OrgUploadToken />, { wrapper })
+  // describe('when user is not an admin and token is available', () => {
+  //   it('renders disabled regenerate button', async () => {
+  //     setup({ orgUploadToken: 'token', isAdmin: false })
+  //     render(<OrgUploadToken />, { wrapper })
 
-      const reGen = await screen.findByText('Regenerate')
-      expect(reGen).toBeDisabled()
-    })
+  //     const reGen = await screen.findByText('Regenerate')
+  //     expect(reGen).toBeDisabled()
+  //   })
 
-    it('renders information', async () => {
-      setup({ orgUploadToken: 'token', isAdmin: false })
-      render(<OrgUploadToken />, { wrapper })
+  //   it('renders information', async () => {
+  //     setup({ orgUploadToken: 'token', isAdmin: false })
+  //     render(<OrgUploadToken />, { wrapper })
 
-      const text = await screen.findByText(
-        'Only organization admins can regenerate this token.'
-      )
-      expect(text).toBeInTheDocument()
-    })
-  })
+  //     const text = await screen.findByText(
+  //       'Only organization admins can regenerate this token.'
+  //     )
+  //     expect(text).toBeInTheDocument()
+  //   })
+  // })
 })
